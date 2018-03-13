@@ -13,6 +13,16 @@ String edad=null;
 <title>array</title>
 </head>
 <body>
+<table>
+<tr>
+<td>Titulo</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Autor</td>
+<td>4</td>
+</tr>
+</table>
 <%
 int i = 0;
 for (i=0;i<nombres.length; i++){
@@ -21,6 +31,7 @@ for (i=0;i<nombres.length; i++){
 	out.print(nombre+", "+ edad+"<br/>");
 }
 %> 
+
 
 </body>
 </html>
