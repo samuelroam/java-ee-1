@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    <%@ page import="modelo.Libro"%>
+    <%@ page import="modelo.LibroModelo" %>
+    
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,21 +12,42 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="" method="get">
-First name: <input type="text" name="fname">
-Last name: <input type="text" name="lname">
-<input type="submit" value="Submit">
-</form>
+
 <table>
 <tr>
 <td>titulo</td>
 <td>autor</td>
 </tr>
 <tr>
-<td>titulo 1</td>
+<td>
+<%
+
+%>
+</td>
 <td>autor 1</td>
 <td><a href="02_array.jsp">ver</a></td>
 </tr>
 </table>
 </body>
 </html>
+
+
+LibroModelo libroModelo = new LibroModelo();
+				ArrayList<Libro> libros = libroModelo.selectAll();
+				this.mostrarLibros(libros);
+				
+				
+				public void mostrarLibros(ArrayList<Libro> libros){
+		Iterator<Libro> i = libros.iterator();
+		while(i.hasNext()){
+			Libro libro = i.next();
+			this.mostrarLibro(libro);
+		}
+		
+	}
+	
+	public void mostrarLibro(Libro libro){
+		System.out.println(libro.getId()+ "\t - "+
+				libro.getTitulo()+ "\t - "+
+				libro.getAutor());
+	}
